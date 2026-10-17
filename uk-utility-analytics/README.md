@@ -1,6 +1,6 @@
 # UK Utility Analytics: one-page website
 
-Static, dependency-free one-pager (HTML + CSS + vanilla JS). Upload the folder contents to any host (Hostinger, cPanel, Netlify, Vercel, GitHub Pages).
+Static, dependency-free one-pager (HTML + CSS + vanilla JS). The hero is a scroll-driven story: the invoice comes apart in 3D, each layer is checked, and the wrong charge is flagged. Phones and reduced-motion visitors get a composed still version. Upload the folder contents to any host (Hostinger, cPanel, Netlify, Vercel, GitHub Pages).
 
 ```
 index.html      page, styles and scripts
@@ -17,6 +17,10 @@ sitemap.xml
 4. **Reviews**: the four testimonials are placeholders. Replace them with real client feedback (with permission). Fake reviews are unlawful in the UK (DMCC Act 2024). Once reviews are real, `Review` / `AggregateRating` schema can be added.
 5. **Sample report**: the exception-report figures are labelled illustrative. Keep that label or swap in anonymised real data.
 6. Submit `sitemap.xml` in Google Search Console and create a Google Business Profile.
+
+## Optional upgrade
+
+The 3D invoice hero is built in code. An AI-generated hero video (Higgsfield) can be added later once the account has credits.
 
 ## SEO included
 
