@@ -1,32 +1,31 @@
-# UK Utility Analytics: one-page website
+# UK Utility Analytics website
 
-Static, dependency-free one-pager (HTML + CSS + vanilla JS). The hero is a scroll-driven story: the invoice comes apart in 3D, each layer is checked, and the wrong charge is flagged. Phones and reduced-motion visitors get a composed still version. Upload the folder contents to any host (Hostinger, cPanel, Netlify, Vercel, GitHub Pages).
+A static, multi-page website for UK energy invoice validation and billing analysis. It has no framework and no runtime dependencies.
 
 ```
-index.html      page, styles and scripts
-assets/         logo (from brand PDF), favicon, apple-touch-icon, og-image
-robots.txt
-sitemap.xml
+build.py            site generator: settings, shared layout, SEO head, schema, header/footer, sitemap
+src/pages/*.html    page content (JSON metadata in the first comment, then the page body)
+public/             THE WEBSITE: upload the contents of this folder to your host
+  assets/css/site.css   design system
+  assets/js/site.js     navigation, reveal, forms, calculator (about 6 KB)
+  assets/fonts/         self-hosted fonts (SIL Open Font License, licences included)
+  assets/img/           logo, favicon, social image
+docs/AUDIT.md       research, audit findings, keyword map and design decisions
+QA-REPORT.md        what was tested, results, remaining issues, launch checklist
 ```
 
-## Before going live
+## Editing
 
-1. **Domain**: replace `https://www.ukutilityanalytics.co.uk/` in `index.html` (canonical, Open Graph, JSON-LD), `robots.txt` and `sitemap.xml`.
-2. **Email**: replace `hello@ukutilityanalytics.co.uk` (contact section, mobile CTA, `CONTACT_EMAIL` in the script).
-3. **Enquiry form**: set `data-endpoint` on `<form id="enquiry">` to a form backend (Formspree, Basin, Netlify Forms…). Without one, the form opens the visitor's email app with the enquiry pre-filled.
-4. **Reviews**: the four testimonials are placeholders. Replace them with real client feedback (with permission). Fake reviews are unlawful in the UK (DMCC Act 2024). Once reviews are real, `Review` / `AggregateRating` schema can be added.
-5. **Sample report**: the exception-report figures are labelled illustrative. Keep that label or swap in anonymised real data.
-6. Submit `sitemap.xml` in Google Search Console and create a Google Business Profile.
+1. Edit text in `src/pages/`, or change settings at the top of `build.py`.
+2. Run `python3 build.py` (Python 3.8+, no packages needed). This regenerates `public/`, including `sitemap.xml` and `robots.txt`.
+3. Preview with `cd public && python3 -m http.server 8000`, then open http://localhost:8000. Links are root-relative, so double-clicking the files will not navigate correctly.
 
-## Optional upgrade
+Tokens available in page bodies: `{{form}}`, `{{cta}}`, `{{cta:Title|Text}}`, `{{related}}`, `{{notice}}`, `{{email}}` and `{{icon:name}}`.
 
-The 3D invoice hero is built in code. An AI-generated hero video (Higgsfield) can be added later once the account has credits.
+## Adding a page
 
-## SEO included
+Create `src/pages/NN-name.html` with the metadata block (`slug`, `crumb`, `title`, `description`, and `service` for a service page), then rebuild. Add it to `SERVICES` in `build.py` if it should appear in the navigation and related links.
 
-- One `h1`, logical `h2`/`h3` outline, semantic landmarks, `lang="en-GB"`
-- Title and meta description targeting "energy invoice validation", "bill validation UK", MPAN/MPRN, CCL, etc.
-- JSON-LD: `ProfessionalService` (with service catalogue), `WebSite`, `FAQPage`
-- Open Graph / Twitter cards, canonical, robots.txt, sitemap.xml
-- Content visible without JavaScript; no framework, so the page is fast for Core Web Vitals
-- Respects `prefers-reduced-motion`, keyboard accessible tabs/accordion/menu
+## Reviews
+
+The site has no testimonials, because none were supplied. Add genuine, verifiable client feedback only, with permission. Fake or invented reviews are unlawful under the Digital Markets, Competition and Consumers Act 2024.

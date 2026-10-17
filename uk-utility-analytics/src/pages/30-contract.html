@@ -1,0 +1,100 @@
+<!--
+{"slug": "contract-rate-verification", "crumb": "Contract rate verification", "service": "Energy contract rate verification", "priority": 8,
+ "title": "Energy Contract Rate Verification | UK Utility Analytics",
+ "description": "Check that business energy invoices use your contracted unit rates and standing charges, and find supplies billed at out-of-contract or deemed rates."}
+-->
+<section class="page-hero" aria-labelledby="page-title">
+  <div class="wrap page-hero-grid">
+    <div>
+      <span class="eyebrow">Unit rates &middot; Standing charges &middot; Deemed rates</span>
+      <h1 id="page-title">Contract rate verification</h1>
+      <p class="lead">We compare the unit rates, standing charges and contract terms on each energy invoice with the documentation you supply. Rates that do not match, changes applied on the wrong date and supplies billed outside their contract are all reported with evidence.</p>
+      <div class="btn-row" style="margin-top:28px"><a class="btn" href="/contact/">Request a quote {{icon:arrow}}</a><a class="btn btn-ghost" href="#rate-check">Try a rate check</a></div>
+    </div>
+    <aside class="glance" aria-labelledby="glance-title">
+      <h2 id="glance-title">At a glance</h2>
+      <dl>
+        <div><dt>Fuels</dt><dd>Electricity and gas</dd></div>
+        <div><dt>Checked against</dt><dd>Contracts, price confirmations and supply schedules you supply</dd></div>
+        <div><dt>Includes</dt><dd>Out-of-contract and deemed-rate reviews</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="section white" aria-labelledby="check-title">
+  <div class="wrap">
+    <div class="section-head split">
+      <h2 id="check-title">What we verify</h2>
+      <p class="lead">A contract sets the prices. The invoice should follow them exactly, for every supply and every day of the billing period.</p>
+    </div>
+    <div class="check-grid">
+      <div class="check"><h3>Unit rates</h3><p>Each rate band on the invoice, such as day, night or single rate, compared with the price confirmation.</p></div>
+      <div class="check"><h3>Standing charges</h3><p>The daily standing charge and the number of days billed.</p></div>
+      <div class="check"><h3>Contract dates</h3><p>Contract start and end dates, and any price change applied from the correct date, including split billing periods.</p></div>
+      <div class="check"><h3>Supplies covered</h3><p>Every MPAN or MPRN on the contract billed at contract rates, and no supply billed that is not yours.</p></div>
+      <div class="check"><h3>Out-of-contract rates</h3><p>Supplies whose fixed contract has ended without a new one in place, which are often billed at higher out-of-contract prices.</p></div>
+      <div class="check"><h3>Deemed rates</h3><p>Supplies taken over without a contract, for example after moving into premises, which are billed at deemed rates until a contract is agreed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rate-check" aria-labelledby="calc-title">
+  <div class="wrap">
+    <div class="panel" style="padding:clamp(24px,4vw,48px)">
+      <div class="calc">
+        <div>
+          <span class="eyebrow">Interactive example</span>
+          <h2 id="calc-title" style="margin:14px 0 14px;font-size:clamp(1.7rem,3vw,2.4rem)">See how a small rate difference adds up</h2>
+          <p class="muted" style="margin-bottom:22px">Compare a contract price with the price on an invoice. This is one of the simplest checks in a contract rate review.</p>
+          <div class="seg" role="group" aria-label="Charge type"><button type="button" data-mode="sc" aria-pressed="true">Standing charge</button><button type="button" data-mode="ur" aria-pressed="false">Unit rate</button></div>
+          <div class="range"><label for="rc-contract"><span>Contract price</span><output id="rc-o-contract" for="rc-contract"></output></label><input type="range" id="rc-contract"></div>
+          <div class="range"><label for="rc-billed"><span>Price on the invoice</span><output id="rc-o-billed" for="rc-billed"></output></label><input type="range" id="rc-billed"></div>
+          <div class="range"><label for="rc-qty"><span id="rc-l-qty">Days in billing period</span><output id="rc-o-qty" for="rc-qty"></output></label><input type="range" id="rc-qty"></div>
+        </div>
+        <div>
+          <div class="result" aria-live="polite">
+            <small>Difference on this invoice</small>
+            <span class="big" id="rc-diff">&pound;0.00</span>
+            <span id="rc-dir">Billed above the contract price</span>
+            <div class="row"><span>The same difference over 12 months</span><b id="rc-year">&pound;0.00</b></div>
+            <span class="verdict" id="rc-verdict">Would be raised as an exception</span>
+          </div>
+          <p class="muted small" style="margin-top:14px">Illustration only, using the figures you choose. It is not an estimate of any saving or refund.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section white" aria-label="Requirements">
+  <div class="wrap two-col">
+    <div class="panel reveal">
+      <h2>What we need from you</h2>
+      <ul class="list-plain">
+        <li>The contract, price confirmation or tender schedule for each supply</li>
+        <li>The invoices for the period to be reviewed</li>
+        <li>A list of supplies (MPANs and MPRNs) and sites, if you have one</li>
+      </ul>
+    </div>
+    <div class="panel reveal">
+      <h2>No contract to hand?</h2>
+      <p class="muted">We can still compare rates across consecutive invoices, identify unexplained price changes and flag supplies that appear to be on out-of-contract or deemed terms. The report will state clearly which findings could not be verified against a contract.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="faq-title">
+  <div class="wrap faq-grid">
+    <div><span class="eyebrow">FAQ</span><h2 id="faq-title" style="margin-top:16px">Contract rate questions</h2></div>
+    <div class="faq">
+      <details open><summary>What is the difference between deemed and out-of-contract rates?<span class="pm" aria-hidden="true"></span></summary><div class="answer"><p>Out-of-contract rates apply when a fixed contract ends and no new contract has been agreed. Deemed rates apply when a business uses energy at premises without having agreed a contract, for example after moving in. Both are usually higher than negotiated contract prices.</p></div></details>
+      <details><summary>Do you check both electricity and gas contracts?<span class="pm" aria-hidden="true"></span></summary><div class="answer"><p>Yes. Contract rate verification covers electricity and gas, and can be combined with full <a href="/business-electricity-bill-checking/">electricity bill checking</a> or <a href="/gas-invoice-validation/">gas invoice validation</a>.</p></div></details>
+      <details><summary>Can you review rates across many sites at once?<span class="pm" aria-hidden="true"></span></summary><div class="answer"><p>Yes. For multi-site portfolios we check every supply on the contract schedule and report exceptions by site and supply.</p></div></details>
+    </div>
+  </div>
+</section>
+
+{{related}}
+{{cta:Check your invoices against your contracts|Send us your contract schedule and invoice volumes. We will come back with a proposed scope and pricing.}}
+{{notice}}
